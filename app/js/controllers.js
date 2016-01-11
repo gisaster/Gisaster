@@ -19,6 +19,7 @@ $scope.map = { center: { latitude: 8.466351981820633, longitude: 124.64285510489
 $http.get('https://ashirted.x10.mx/gisasterphp/popData.php')
     .success(function(Markers) {
     	      $scope.markers = Markers;
+    	      console.log(Markers);
 var filters = searchObject.foo;
 var selected_filter = "flood_id";
 var dataFromdb = Markers;
