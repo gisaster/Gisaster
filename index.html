@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="GisasterWeb" >
+    <head>
+<meta property="og:url"                content="http://arvinhubert.github.io/Gisaster/#/mapview" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="CDO GISASTER Test v4.4" />
+<meta property="og:description"        content="CDO Gisaster Application Service Towards Environment Response." />
+<meta property="og:image"              content="http://i1190.photobucket.com/albums/z457/juan_marco2/ogphoto1_zpslenbv8e4.png" />
+<meta property="fb:app_id"             content="1661746570746583" /> 
+<meta property="fb:admins"             content="100010975506869" />
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link href="app/css/style.css" rel="stylesheet">
+           <!-- JS Scripts -->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="app/js/app.js"></script>
+        <script src="app/js/controllers.js"></script>
+        <script src="app/js/test.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+        <script src="bower_components/angular-socialshare/src/js/angular-socialshare.js"></script>
+        <script src="bower_components/angulike/angulike.js"></script>
+       
+        <script src="app/lib/angularfire/angularfire.min.js"></script>
+        <script src="app/lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
+        <script src="app/lib/lodash.min.js"></script> 
+        <script src="app/lib/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+        <script src="app/lib/angular-simple-logger/dist/angular-simple-logger.js"></script>
+        <script src="app/lib/underscore/underscore-min.js"></script>
+        <script src="app/lib/angular-underscore-module/angular-underscore-module.js"></script>
+    </head>
+       
+    <body >
+<!--       <div id="fb-root"></div> -->
+
+   <!--  <script>
+    window.fbAsyncInit = function() {
+        FB.init({appId: 399913810178834, status: true, cookie: true,
+        xfbml: true});
+    };
+    (function() {
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol +
+        '//connect.facebook.net/en_US/all.js';
+        document.getElementById('fb-root').appendChild(e);
+    }());
+  </script>
+ -->
+  
+         <div ng-view></div>
+    </body>
+</html>
