@@ -52,7 +52,7 @@ $http.get('http://gisaster.x10host.com/gisasterphp/popData.php')
     jsonservice.getjson().then(function(Markers) {
      
        $scope.markers = Markers;
-   });
+   })
       })
 
 
