@@ -38,35 +38,51 @@ $scope.map = { center: { latitude: $scope.result.coords.latitude, longitude: $sc
     
  
 })
-.controller('MapViewCtrl', function($scope, uiGmapGoogleMapApi, $http, $timeout,$location,_) {
+.controller('MapViewCtrl', function($scope, uiGmapGoogleMapApi, $http, $timeout,$location,_,jsonservice) {
 
  $scope.marker =  {};
  $timeout(function() {
 $scope.map = { center: { latitude: 8.466351981820633, longitude: 124.64285510489344 }, zoom: 15 };
-
-$http.JSONP('http://gisaster.x10host.com/gisasterphp/popData.php')
+/*
+$http.get('http://gisaster.x10host.com/gisasterphp/popData.php')
     .success(function(Markers) {
     	      $scope.markers = Markers;
     	      console.log(Markers)
-    })
+    })*/
+    jsonservice.getjson().then(function(Markers) {
+     
+       $scope.markers = Markers;
+   });
       })
 
-/*  $scope.share = function(post){
-  	console.log(post.link)
-    FB.ui(
-    {
-        method: 'feed',
-        name: 'This is the content of the "name" field.',
-        link: "http://9gag.com",
-        picture: post.image,
-        caption: 'Flood Report',
-        description: post.address,
-        message: ''
-    });
-  }*/
-    //$scope.$apply is needed to trigger the digest cycle when the geolocation arrives and to update all the watchers
+
  
 })
+.factory('jsonservice', function($http){
+
+  var items = [];
+  
+  return {
+    getjson: function(){
+    
+        return $http.get('http://gisaster.x10host.com/gisasterphp/popData.php')
+    .success(function(Markers) {
+    
+
+        return items = Markers;
+     
+    });
+   // alert(JSON.stringify($scope.results));
+           
+           }   
+      
+
+  
+    }  
+  
+
+})
+
 .controller('MetaCtrl', function($scope, $http, $timeout,$location,_,$rootScope) {
 
     var searchObject = $location.search();
